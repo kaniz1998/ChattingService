@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Chat Application</title>
+</head>
+<body>
+    <section id="main">
+        <div class="header">
+            <h4 class="log">TechChat</h4>
+            <div class="user"></div>
+        </div>
+        <div class="message-body">    
+        </div>
+        <div class="message-form">     
+            <input type="text" name="txt-msg" id="txtMsg" value=""> 
+            <label for="imageInput"><img src="clip.png" name="file-msg" class="clip"/></label>
+            <button type="button" class="" data-toggle="modal" data-target="#myModal" style="height: 41px; width: 41px; background-color: black; color:white;">Form</button>
+            <input type="file" name="fileShare" id="imageInput">
+            <img src="send.png" class="btn" onclick="sendClick()" /> 
+        </div>
+    </section>
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">   
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Form Data</h4>
+        </div>
+        <div class="modal-body">
+            <p>
+                <label>Student Name:</label><input type="text" id="studentname" class="form-control" />
+            </p>
+            <p>
+                <label>Death Of Birth:</label><input type="date" id="DOB" class="form-control" />
+            </p>
+            <p>
+                <label>Student Mobile No:</label><input type="number" id="studentphone" class="form-control" />
+            </p>
+            <p>
+                <label>Student Email Address:</label><input type="email" id="studentemail" class="form-control" />
+            </p>
+            <p>
+                <label>Student Address:</label><input type="text" id="studentaddress" class="form-control" />
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="button"  data-dismiss="modal" onclick="sendFormData()">Send Form Data</button>
+            <button type="button"  data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
